@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { CgMenu } from 'react-icons/cg';
 
 export const OffCanvasMenu = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <>

@@ -8,7 +8,7 @@ export const ProductGrid = () => {
     // fetch returns a promise
     fetch('https://fakestoreapi.com/products')
       .then((response) => {
-        // respinse.json() returns a promise
+        // response.json() returns a promise
         return response.json();
       })
       .then((products) => {
@@ -27,13 +27,13 @@ export const ProductGrid = () => {
             <h1>{title}</h1>
             <p>{price}</p>
 
-            <Image
-              src={image}
-              width={200}
-              height={200}
-              objectFit="contain"
-              alt={title}
-            ></Image>
+         <Image
+          src={image}
+          width={200}
+          height={200}
+          objectFit='contain'
+          alt={title}
+         ></Image>
           </li>
         );
       })}
