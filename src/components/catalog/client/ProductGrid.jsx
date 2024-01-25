@@ -1,31 +1,23 @@
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
 import { ProductTile } from '.';
 import { css } from '@emotion/css';
+import { useProducts } from '@/components/hooks';
 
 export const ProductGrid = () => {
-  const [products, setProducts] = useState([]);
+  const { products, loading } = useProducts();
   const itemsPerRow = 2;
-
-  useEffect(() => {
-    // fetch returns a promise
-    fetch('https://fakestoreapi.com/products')
-      .then((response) => {
-        // response.json() returns a promise
-        return response.json();
-      })
-      .then((products) => {
-        setProducts(products);
-      });
-  }, []);
 
   const gridCssClass = css`
     display: grid;
     row-gap: 32px;
+
     @media (min-width: 1024px) {
       grid-template-columns: repeat(${itemsPerRow}, 1fr);
     }
   `;
+
+  if (loading) {
+    return <div className="container mx-auto px-4">...loading</div>;
+  }
 
   return (
     <ul className={gridCssClass}>
