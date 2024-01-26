@@ -1,6 +1,6 @@
 import { ProductTile } from '.';
 import { css } from '@emotion/css';
-import { useProducts } from '@/components/hooks';
+import { useProducts } from '../../../hooks';
 
 export const ProductGrid = () => {
   const { products, loading } = useProducts();
