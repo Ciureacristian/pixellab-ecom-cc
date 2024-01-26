@@ -1,11 +1,16 @@
 import { Separator } from '@/components/ui/server';
+import { RatingStar } from '../rating';
 
 export const Footer = () => {
   return (
     <>
-      <section className="container mx-auto px-4 grid justify-items-center lg:justify-items-start gap-x-3 gap-y-10 grid-cols-2 grd-rows-auto">
+      <section className="container grid justify-items-center lg:justify-items-center lg:text-center">
+        <RatingStar rating={5}></RatingStar>
+      </section>
+
+      <section className="grid justify-items-center lg:justify-items-center gap-x-3 gap-y-10 grid-cols-2 grid-rows-auto lg:grid-cols-4">
         <div>
-          <h1 className="text-black font-bold text-center lg:text-left pb-2">
+          <h1 className="text-black font-bold text-center lg:text-left pb-2 m-5">
             LOS ANGELES
           </h1>
 
@@ -24,7 +29,7 @@ export const Footer = () => {
         </div>
 
         <div>
-          <h1 className="text-black font-bold text-center lg:text-left pb-2">
+          <h1 className="text-black font-bold text-center lg:text-left pb-2 m-5">
             SAN FRANCISCO
           </h1>
 
@@ -43,11 +48,11 @@ export const Footer = () => {
         </div>
 
         <div>
-          <h1 className="text-black font-bold text-center lg:text-left pb-2">
+          <h1 className="text-black font-bold text-center lg:text-left pb-2 m-5">
             NEW YORK
           </h1>
 
-          <ul className="flex flex-col items-start justify-center  lg:justify-start gap-3 lg:gap-5 text-black">
+          <ul className="flex flex-col items-start justify-center  lg:justify-start gap-3 lg:gap-5 text-black mb-4">
             <li>
               711 Snow Street,{' '}
               <span className="block"> New York, NY 10014</span>
@@ -62,11 +67,11 @@ export const Footer = () => {
         </div>
 
         <div>
-          <h1 className="text-black font-bold text-center lg:text-left pb-2">
+          <h1 className="text-black font-bold text-center lg:text-left pb-2 m-5">
             FOLLOW US
           </h1>
 
-          <ul className="grid gap-x-3 lg:gap-x-10 gap-y-2 grid-cols-2 grid-rows-auto text-black">
+          <ul className="grid gap-x-3 lg:gap-x-10 gap-y-2 grid-cols-2 grid-rows-auto text-black mb-4">
             <li>
               <a
                 href="http://www.facebook.com"
@@ -136,7 +141,11 @@ export const Footer = () => {
 
       <Separator></Separator>
 
-      <section className="container mx-auto px-4">footer secondary</section>
+      <section className="container mx-auto px-4">
+        <p className="text-black font-bold text-center text-2xl p-3 lg:text-center">
+          &copy; Ciurea Cristian {new Date().getFullYear()}
+        </p>
+      </section>
     </>
   );
 };
