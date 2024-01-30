@@ -1,9 +1,15 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import { CgMenu } from 'react-icons/cg';
 
 export const OffCanvasMenu = () => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -20,8 +26,8 @@ export const OffCanvasMenu = () => {
 
       <nav
         className={`${
-          open ? 'translate-y-full' : ''
-        } bg-neutral-900 transition-transform transform-gpu text-white w-dvw h-dvh fixed left-0 -top-full z-0 lg:w-1/3`}
+          open ? 'translate-y-full' : '-translate-x-full'
+        }  bg-neutral-900 transition-transform duration-500 transform-gpu  text-white w-dvw h-dvh fixed left-0 -top-full z-0 lg:w-1/3`}
       >
         <ul className="flex flex-col items-center justify-center h-full">
           <li className="mb-6">
