@@ -1,5 +1,8 @@
 import { uiContext } from '@/context';
 import { useContext } from 'react';
+import { TfiViewGrid } from 'react-icons/tfi';
+import { TfiLayoutColumn2 } from 'react-icons/tfi';
+import { TfiLayoutWidthFull } from 'react-icons/tfi';
 
 const buttonClasses =
   'flex justify-center items-center border-l border-zinc-200 w-20 hover:text-white h-20 transition-colors hover:bg-neutral-900';
@@ -20,7 +23,7 @@ export const GridControls = () => {
             setItemsPerRow('1');
           }}
         >
-          1
+          <TfiLayoutWidthFull></TfiLayoutWidthFull>
         </button>
       </li>
 
@@ -35,7 +38,7 @@ export const GridControls = () => {
             setItemsPerRow('2');
           }}
         >
-          2
+          <TfiLayoutColumn2></TfiLayoutColumn2>
         </button>
       </li>
 
@@ -50,7 +53,7 @@ export const GridControls = () => {
             setItemsPerRow('4');
           }}
         >
-          4
+          <TfiViewGrid></TfiViewGrid>
         </button>
       </li>
     </ul>

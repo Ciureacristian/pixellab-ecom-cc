@@ -9,7 +9,7 @@ export default function Home() {
         <CartControls></CartControls>
       </header>
 
-      <section>
+      <section className="my-16">
         <ProductGrid></ProductGrid>
       </section>
 

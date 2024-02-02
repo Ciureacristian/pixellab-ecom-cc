@@ -3,6 +3,7 @@ import { css } from '@emotion/css';
 import { useProducts } from '../../../hooks';
 import { useContext, useEffect, useState } from 'react';
 import { uiContext } from '@/context';
+import { BsCart } from 'react-icons/bs';
 
 export const ProductGrid = () => {
   const { itemsPerRow } = useContext(uiContext);
@@ -24,6 +25,7 @@ export const ProductGrid = () => {
     row-gap: 32px;
 
     @media (min-width: 1024px) {
+      column-gap: 32px;
       grid-template-columns: repeat(${itemsPerRow}, 1fr);
     }
   `;
@@ -33,7 +35,12 @@ export const ProductGrid = () => {
   }
 
   if (error.trim().length > 0) {
-    return <div className="container mx-auto px-4">{error}</div>;
+    return (
+      <div className="container mx-auto px-4">
+        {' '}
+        <p className="text-red-600">{error}</p>
+      </div>
+    );
   }
 
   const pageCount = Math.ceil(products.length / perPage);
@@ -45,7 +52,7 @@ export const ProductGrid = () => {
           const { id } = product;
 
           return (
-            <li key={id}>
+            <li key={id} className="flex opacity-100">
               <ProductTile product={product}></ProductTile>
             </li>
           );
@@ -58,7 +65,6 @@ export const ProductGrid = () => {
             .fill(' ')
             .map((_, index) => {
               const pageIndex = index + 1;
-
               return (
                 <li key={index}>
                   <button
