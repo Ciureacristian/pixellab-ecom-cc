@@ -1,14 +1,15 @@
 import { ProductTile } from '.';
 import { css } from '@emotion/css';
 import { useProducts } from '../../../hooks';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { uiContext } from '@/context';
 
 export const ProductGrid = () => {
+  const { itemsPerRow } = useContext(uiContext);
   const { products, loading, error } = useProducts();
   const [paginatedProducts, setPaginatedProducts] = useState([]);
   const [perPage, setPerPage] = useState(8);
   const [page, setPage] = useState(1);
-  const itemsPerRow = 2;
 
   useEffect(() => {
     const newPaginatedProducts = products
