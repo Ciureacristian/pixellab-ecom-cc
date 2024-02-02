@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BsCart } from 'react-icons/bs';
+import { CartPage } from '.';
 
 export const CartControls = () => {
   return (

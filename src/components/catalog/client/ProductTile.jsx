@@ -30,10 +30,19 @@ export const ProductTile = (props) => {
           </Link>
         </h1>
 
-        <div></div>
+        <div>Price: ${price}</div>
 
-        <footer>{/* add to cart homework */}</footer>
+        <footer>
+          <button
+            onClick={() => handleAddToCart(id)}
+            className="bg-black hover:bg-amber-400 text-white  font-bold py-5 px-8 rounded transition-colors border-2 "
+          >
+            Add to Cart
+          </button>
+        </footer>
       </section>
     </article>
   );
 };
+
+// className="bg-black hover:bg-amber-400 text-white  font-bold py-5 px-8 rounded transition-colors border-2 "
