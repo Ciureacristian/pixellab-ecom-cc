@@ -3,7 +3,6 @@ import { css } from '@emotion/css';
 import { useProducts } from '../../../hooks';
 import { useContext, useEffect, useState } from 'react';
 import { uiContext } from '@/context';
-import { BsCart } from 'react-icons/bs';
 
 export const ProductGrid = () => {
   const { itemsPerRow } = useContext(uiContext);
@@ -70,7 +69,7 @@ export const ProductGrid = () => {
                   <button
                     type="button"
                     title={`Page ${pageIndex}`}
-                    className={`border border-zinc-200 p-2 mt-4 mb-4 hover:bg-black  hover:text-white transition-colors ${
+                    className={`border border-zinc-200 p-2 mt-4 mb-4 rounded-sm hover:bg-black  hover:text-white transition-colors ${
                       pageIndex === page ? 'bg-black text-white' : ''
                     }`}
                     onClick={() => {

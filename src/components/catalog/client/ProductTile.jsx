@@ -17,7 +17,7 @@ export const ProductTile = (props) => {
           <div
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="relative"
+            className="inline"
           >
             <Image
               width={200}
@@ -25,7 +25,7 @@ export const ProductTile = (props) => {
               src={imageUrl}
               alt={`Image for product ${title}`}
               objectFit="contain"
-              className={`inline mx-auto transition-transform ${
+              className={`inline  transition-transform ${
                 isHovered ? 'scale-105' : ''
               }`}
               layout="response"
