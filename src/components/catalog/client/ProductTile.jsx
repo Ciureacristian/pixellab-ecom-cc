@@ -1,25 +1,36 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import css from 'styled-jsx/css';
+import { useState } from 'react';
 
 export const ProductTile = (props) => {
   const { product } = props;
   const { title, image: imageUrl, price, id } = product;
 
   const productUrl = `/products/${id}`;
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <article className="text-center  w-full flex flex-col justify-between gap-4">
       <header>
         <Link href={productUrl} title={title}>
-          <Image
-            width={200}
-            height={200}
-            src={imageUrl}
-            alt={`Image for product ${title}`}
-            objectFit="contain"
-            className="inline"
-            layout="response"
-          ></Image>
+          <div
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="relative"
+          >
+            <Image
+              width={200}
+              height={200}
+              src={imageUrl}
+              alt={`Image for product ${title}`}
+              objectFit="contain"
+              className={`inline mx-auto transition-transform ${
+                isHovered ? 'scale-105' : ''
+              }`}
+              layout="response"
+            ></Image>
+          </div>
         </Link>
       </header>
 
@@ -44,5 +55,3 @@ export const ProductTile = (props) => {
     </article>
   );
 };
-
-// className="bg-black hover:bg-amber-400 text-white  font-bold py-5 px-8 rounded transition-colors border-2 "
