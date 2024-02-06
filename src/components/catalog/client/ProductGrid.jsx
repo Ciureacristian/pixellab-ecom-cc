@@ -5,11 +5,10 @@ import { useContext, useEffect, useState } from 'react';
 import { uiContext } from '@/context';
 
 export const ProductGrid = () => {
-  const { itemsPerRow } = useContext(uiContext);
+  const { itemsPerRow, pagination } = useContext(uiContext);
+  const { perPage, page } = pagination;
   const { products, loading, error } = useProducts();
   const [paginatedProducts, setPaginatedProducts] = useState([]);
-  const [perPage, setPerPage] = useState(8);
-  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const newPaginatedProducts = products
@@ -42,8 +41,6 @@ export const ProductGrid = () => {
     );
   }
 
-  const pageCount = Math.ceil(products.length / perPage);
-
   return (
     <>
       <ul className={gridCssClass}>
@@ -57,32 +54,6 @@ export const ProductGrid = () => {
           );
         })}
       </ul>
-
-      <div className="flex justify-center">
-        <ul className="flex gap-2">
-          {Array(pageCount)
-            .fill(' ')
-            .map((_, index) => {
-              const pageIndex = index + 1;
-              return (
-                <li key={index}>
-                  <button
-                    type="button"
-                    title={`Page ${pageIndex}`}
-                    className={`border border-zinc-200 p-2 mt-4 mb-4 rounded-sm hover:bg-black  hover:text-white transition-colors ${
-                      pageIndex === page ? 'bg-black text-white' : ''
-                    }`}
-                    onClick={() => {
-                      setPage(pageIndex);
-                    }}
-                  >
-                    {pageIndex}
-                  </button>
-                </li>
-              );
-            })}
-        </ul>
-      </div>
     </>
   );
 };
