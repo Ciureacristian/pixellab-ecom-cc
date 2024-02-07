@@ -1,3 +1,11 @@
-export const CartPage = () => {
-  <p>Hello cart</p>;
+import { CartControls } from '.';
+
+const CartPage = () => {
+  return (
+    <div>
+      <CartControls></CartControls>
+    </div>
+  );
 };
+
+export default CartPage;

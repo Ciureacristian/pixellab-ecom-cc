@@ -6,7 +6,7 @@ let cache = [];
 
 export const useProducts = () => {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState([true]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export const useProducts = () => {
         .catch((error) => {
           console.dir(error);
           setLoading(false);
-          setError('An error occured');
+          setError('An error occurred');
         });
     } else {
       setProducts(cache);

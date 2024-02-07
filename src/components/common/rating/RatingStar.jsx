@@ -10,7 +10,7 @@ export const RatingStar = ({ rating }) => {
   ));
 
   if (hasHalfStar) {
-    stars.push(<span key="half">⭐½</span>);
+    stars.push(<span key="half">⭐⭐⭐⭐⭐</span>);
   }
 
   return <div>{stars}</div>;

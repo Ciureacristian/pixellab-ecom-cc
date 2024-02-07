@@ -1,13 +1,8 @@
 import { Separator } from '@/components/ui/server';
-import { RatingStar } from '../rating';
 
 export const Footer = () => {
   return (
     <>
-      <section className="container grid justify-items-center lg:justify-items-center lg:text-center">
-        <RatingStar rating={5}></RatingStar>
-      </section>
-
       <section className="grid justify-items-center lg:justify-items-center gap-x-3 gap-y-10 grid-cols-2 grid-rows-auto lg:grid-cols-4">
         <div>
           <h1 className="text-black font-bold text-center lg:text-left pb-2 m-5">

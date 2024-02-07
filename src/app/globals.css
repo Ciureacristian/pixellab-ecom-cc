@@ -41,6 +41,8 @@ body {
     background: var(--gray);
 }
 
+
+
 @media(min-width: 1024px) {
     .layout-grid {
         grid-template-columns: var(--desktopHeaderSize) 1fr;
