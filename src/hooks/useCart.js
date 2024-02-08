@@ -48,9 +48,7 @@ export const useCart = (cartId = 2) => {
     });
   };
 
-  const removeFromCart = (productId) => {
-    // Logica pentru eliminarea produsului din coș
-  };
+  const removeFromCart = (productId) => {};
 
   return { cartProducts, loading, error, isInCart, addToCart, removeFromCart };
 };

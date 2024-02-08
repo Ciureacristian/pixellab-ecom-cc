@@ -4,9 +4,8 @@ import { useContext } from 'react';
 import { cartContext } from '@/context';
 
 export const CartControls = () => {
-  const { cart } = useContext(cartContext); // Accesăm coșul de cumpărături din context
+  const { cart } = useContext(cartContext);
 
-  // Calculăm numărul total de produse din coș
   const totalItems = cart ? cart.products.length : 0;
 
   return (
@@ -18,7 +17,6 @@ export const CartControls = () => {
         >
           <span className="relative">
             <BsCart />
-            {/* Afișăm numărul de produse într-un cerc roșu */}
             <span className="absolute block w-5 bg-gradient-to-br bg-black text-white -top-4 -right-4 rounded-full text-sm text-center shadow-lg">
               {totalItems}
             </span>

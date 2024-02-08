@@ -22,7 +22,7 @@ export const ProductTile = (props) => {
   };
 
   return (
-    <div className="text-center  w-full flex flex-col justify-between gap-4">
+    <div className="text-center w-full flex flex-col justify-between gap-4">
       <header>
         <Link href={productUrl} title={title}>
           <div
@@ -36,11 +36,11 @@ export const ProductTile = (props) => {
               src={imageUrl}
               alt={`Image for product ${title}`}
               objectFit="contain"
-              className={`inline  transition-transform ${
+              className={`inline transition-transform ${
                 isHovered ? 'scale-105' : ''
               }`}
               layout="response"
-            ></Image>
+            />
           </div>
         </Link>
       </header>
@@ -53,7 +53,7 @@ export const ProductTile = (props) => {
         </h1>
 
         <div>
-          <RatingStar></RatingStar>
+          <RatingStar />
         </div>
 
         <div>Price: ${price}</div>

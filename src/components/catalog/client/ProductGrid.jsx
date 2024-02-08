@@ -4,6 +4,12 @@ import { useProducts } from '../../../hooks';
 import { useContext, useEffect, useState } from 'react';
 import { uiContext } from '@/context';
 
+const Spinner = () => (
+  <div className="flex justify-center items-center h-screen">
+    <p className="loader"></p>
+  </div>
+);
+
 export const ProductGrid = () => {
   const { itemsPerRow, pagination } = useContext(uiContext);
   const { perPage, page } = pagination;
@@ -29,7 +35,7 @@ export const ProductGrid = () => {
   `;
 
   if (loading) {
-    return <div className="container mx-auto px-4">...loading</div>;
+    return <Spinner></Spinner>;
   }
 
   if (error.trim().length > 0) {

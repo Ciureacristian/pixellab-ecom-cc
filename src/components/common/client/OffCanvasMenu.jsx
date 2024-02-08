@@ -49,6 +49,16 @@ export const OffCanvasMenu = () => {
               Contact
             </Link>
           </li>
+
+          <li className="mb-6">
+            <Link
+              href="/contact"
+              title="Contact"
+              className="text-xl font-semibold transition-colors hover:text-amber-400 hover:underline"
+            >
+              About Us
+            </Link>
+          </li>
         </ul>
       </nav>
     </>

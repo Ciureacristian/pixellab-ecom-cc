@@ -1,4 +1,5 @@
 import { CartControls, BackToShop } from '@/components/cart/client';
+import { CartContext } from '@/context';
 
 export default function CartPage() {
   return (
