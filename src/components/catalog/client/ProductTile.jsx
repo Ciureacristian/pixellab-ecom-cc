@@ -4,6 +4,7 @@ import css from 'styled-jsx/css';
 import { useState } from 'react';
 import { RatingStar } from '@/components/common/rating';
 import { useCart } from '@/hooks/useCart';
+import { AddToCart } from '@/components/cart/client';
 
 export const ProductTile = (props) => {
   const { product } = props;
@@ -11,15 +12,6 @@ export const ProductTile = (props) => {
 
   const productUrl = `/products/${id}`;
   const [isHovered, setIsHovered] = useState(false);
-  const { isInCart, addToCart, removeFromCart } = useCart();
-
-  const handleAddToCart = (productId) => {
-    if (isInCart(productId)) {
-      removeFromCart(productId);
-    } else {
-      addToCart(productId);
-    }
-  };
 
   return (
     <div className="text-center w-full flex flex-col justify-between gap-4">
@@ -52,19 +44,12 @@ export const ProductTile = (props) => {
           </Link>
         </h1>
 
-        <div>
-          <RatingStar />
-        </div>
+        <div>{/* <RatingStar /> */}</div>
 
         <div>Price: ${price}</div>
 
         <footer>
-          <button
-            onClick={() => handleAddToCart(id)}
-            className="bg-black hover:bg-amber-400 text-white font-bold py-5 px-8 rounded transition-colors border-2"
-          >
-            {isInCart(id) ? 'Remove from Cart' : 'Add to Cart'}
-          </button>
+          <AddToCart product={product}></AddToCart>
         </footer>
       </section>
     </div>

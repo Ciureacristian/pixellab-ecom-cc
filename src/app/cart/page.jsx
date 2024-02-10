@@ -1,4 +1,9 @@
-import { CartControls, BackToShop } from '@/components/cart/client';
+import {
+  CartControls,
+  BackToShop,
+  CartTotals,
+  CartDisplay,
+} from '@/components/cart/client';
 import { CartContext } from '@/context';
 
 export default function CartPage() {
@@ -11,9 +16,13 @@ export default function CartPage() {
       </header>
 
       <section className="mt-16 grid grid-cols-12 gap-6">
-        <div className="col-span-8">table</div>
+        <div className="col-span-8">
+          <CartDisplay></CartDisplay>
+        </div>
 
         <aside className="col-span-4">
+          <CartTotals></CartTotals>
+
           <div>
             <button type="button" title="Proceed to Checkout">
               Proceed to Checkout

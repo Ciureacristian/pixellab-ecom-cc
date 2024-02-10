@@ -1,0 +1,47 @@
+import { useProduct } from '@/hooks';
+
+export const CartLineItem = ({ product }) => {
+  const { quantity, productId } = product;
+  const { product: fullProduct, loading } = useProduct(productId);
+
+  if (loading) {
+    //add spinner
+    return (
+      <>
+        <tr>
+          <td>...loading</td>
+        </tr>
+      </>
+    );
+  }
+
+  if (!fullProduct) {
+    return (
+      <>
+        <tr>
+          <td></td>
+        </tr>
+      </>
+    );
+  }
+
+  const { title, price } = fullProduct;
+
+  return (
+    <tr>
+      <td>{/*remove all button with X */}</td>
+
+      <td>{/* insert img*/}</td>
+
+      <td>
+        <h1>{title}</h1>
+      </td>
+
+      <td>{price}</td>
+
+      <td>{quantity}</td>
+
+      <td>{price * quantity}</td>
+    </tr>
+  );
+};
