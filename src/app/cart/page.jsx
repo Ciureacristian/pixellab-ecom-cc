@@ -15,16 +15,20 @@ export default function CartPage() {
         <CartControls></CartControls>
       </header>
 
-      <section className="mt-16 grid grid-cols-12 gap-6">
+      <section className="mt-16 grid lg:grid-cols-12 gap-6">
         <div className="col-span-8">
           <CartDisplay></CartDisplay>
         </div>
 
-        <aside className="col-span-4">
+        <aside className="lg:col-span-4">
           <CartTotals></CartTotals>
 
-          <div>
-            <button type="button" title="Proceed to Checkout">
+          <div className="flex">
+            <button
+              type="button"
+              title="Proceed to Checkout"
+              className="bg-black text-white transition-colors hover:bg-amber-400 uppercase text-center w-full py-4"
+            >
               Proceed to Checkout
             </button>
           </div>

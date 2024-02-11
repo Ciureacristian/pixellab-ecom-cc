@@ -23,9 +23,47 @@ export const CartTotals = () => {
 
   return (
     <>
-      <h1>Cart Totals</h1>
+      <header className="bg-zinc-400 text-white uppercase font-medium p-3">
+        <h1>Cart Totals</h1>
+      </header>
 
-      <div>Total: {total}</div>
+      <section>
+        <div>
+          <div className="border-b py-3">Subtotal:</div>
+
+          <div className="border-b py-3">
+            <form className="flex gap-4">
+              <label>Shipping:</label>
+
+              <div className="flex flex-col gap-4 items-start justify-start">
+                <div className="flex gap-1">
+                  <input
+                    type="radio"
+                    id="standard"
+                    name="shipping"
+                    value="standard"
+                    className="accent-amber-400 focus:accent-amber-400"
+                  />
+                  <label for="standard"> Standard (Free)</label>
+                </div>
+
+                <div className="flex gap-1">
+                  <input
+                    type="radio"
+                    id="standard"
+                    name="shipping"
+                    value="standard"
+                    className="accent-amber-400 focus:accent-amber-400"
+                  />
+                  <label for="standard"> Express ($49.00)</label>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div className="border-b py-3">Total: {total}</div>
+        </div>
+      </section>
     </>
   );
 };
