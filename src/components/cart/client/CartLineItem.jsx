@@ -9,7 +9,7 @@ import { MdDelete } from 'react-icons/md';
 export const CartLineItem = ({ product, removeFromCart }) => {
   const { quantity: initialQuantity, productId } = product;
   const { product: fullProduct, loading } = useProduct(productId);
-  const [quantity, setQuantity] = useState(initialQuantity); // Aici corectez numele variabilei setQuantity
+  const [quantity, setQuantity] = useState(initialQuantity);
 
   const Spinner = () => (
     <div className="flex justify-center items-center h-screen">
