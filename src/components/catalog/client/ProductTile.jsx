@@ -2,13 +2,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import css from 'styled-jsx/css';
 import { useState } from 'react';
-import { RatingStar } from '@/components/common/rating';
+import RatingStar from '@/components/common/rating/RatingStar';
+
 import { useCart } from '@/hooks/useCart';
 import { AddToCart } from '@/components/cart/client';
 
 export const ProductTile = (props) => {
   const { product } = props;
-  const { title, image: imageUrl, price, id } = product;
+  const { title, image: imageUrl, price, id, rating } = product;
+  const { rate } = rating;
 
   const productUrl = `/products/${id}`;
   const [isHovered, setIsHovered] = useState(false);
@@ -44,7 +46,9 @@ export const ProductTile = (props) => {
           </Link>
         </h1>
 
-        <div>{/* <RatingStar /> */}</div>
+        <div>
+          <RatingStar rating={rate}></RatingStar>
+        </div>
 
         <div>Price: ${price}</div>
 
