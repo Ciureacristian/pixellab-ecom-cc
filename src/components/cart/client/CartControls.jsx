@@ -4,23 +4,19 @@ import { useContext } from 'react';
 import { cartContext } from '@/context';
 
 export const CartControls = () => {
-  const { cart } = useContext(cartContext);
+  const { cartProducts } = useContext(cartContext);
 
-  let totalItems = 0;
-
-  if (cart && cart.products.length > 0) {
-    // Using for loop to calculate the total number of items
-    for (let i = 0; i < cart.products.length; i++) {
-      totalItems += cart.products[i].quantity;
-    }
-  }
+  const totalItems = cartProducts.reduce(
+    (total, item) => total + item.quantity,
+    0,
+  );
 
   return (
-    <ul className="border border-zinc-200 transition-colors hover:bg-neutral-900 hover:text-white">
+    <ul className="border border-zinc-400 transition-colors  hover:text-white">
       <li>
         <Link
           href="/cart"
-          className="w-20 aspect-square flex justify-center items-center"
+          className="w-20 h-20  flex justify-center items-center transition-colors hover:text-amber-400 relative"
         >
           <span className="relative">
             <BsCart></BsCart>

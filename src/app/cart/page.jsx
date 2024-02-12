@@ -3,6 +3,7 @@ import {
   BackToShop,
   CartTotals,
   CartDisplay,
+  Coupon,
 } from '@/components/cart/client';
 import { CartContext } from '@/context';
 
@@ -18,6 +19,7 @@ export default function CartPage() {
       <section className="mt-16 grid lg:grid-cols-12 gap-6">
         <div className="col-span-8">
           <CartDisplay></CartDisplay>
+          <Coupon></Coupon>
         </div>
 
         <aside className="lg:col-span-4">
