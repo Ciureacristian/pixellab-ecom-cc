@@ -1,10 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import css from 'styled-jsx/css';
 import { useState } from 'react';
 import RatingStar from '@/components/common/rating/RatingStar';
-
-import { useCart } from '@/hooks/useCart';
 import { AddToCart } from '@/components/cart/client';
 
 export const ProductTile = (props) => {
