@@ -40,7 +40,7 @@ export const CartLineItem = ({ product, removeFromCart }) => {
   const { rate, count } = rating;
 
   const handleRemoveFromCart = () => {
-    removeFromCart(product);
+    removeFromCart(product.productId);
   };
 
   const decreaseQuantity = () => {

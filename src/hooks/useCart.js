@@ -7,6 +7,7 @@ export const useCart = (cartId = 2) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
+    setLoading(true);
     fetch(`${baseUrl}/carts/${cartId}`)
       .then((response) => {
         return response.json();

@@ -23,7 +23,7 @@ export const CartDisplay = () => {
     );
   }
   const handleRemoveFromCart = (product) => {
-    removeFromCart(product);
+    removeFromCart(product.productId);
   };
 
   return (
