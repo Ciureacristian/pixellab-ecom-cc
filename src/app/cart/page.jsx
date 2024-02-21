@@ -5,7 +5,6 @@ import {
   CartDisplay,
   Coupon,
 } from '@/components/cart/client';
-import { CartContext } from '@/context';
 
 export default function CartPage() {
   return (
