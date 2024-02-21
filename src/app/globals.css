@@ -73,4 +73,17 @@ body {
     100% { transform: rotate(360deg); }
   }
 
+  .styles-image{
+    box-sizing: border-box;
+    display: block;
+    width: initial;
+    height: initial;
+    background: none;
+    opacity: 1;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+  }
+
 
